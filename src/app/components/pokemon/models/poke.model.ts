@@ -1,7 +1,8 @@
+import { Type } from "./type.model";
+
 export default interface Pokemon {
   id: number;
   name: string;
-
-  types: [];
+  types: Type[];
   image: string;
 }

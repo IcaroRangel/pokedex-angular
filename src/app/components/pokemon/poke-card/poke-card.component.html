@@ -1,0 +1,19 @@
+<div class="poke-card" *ngIf="pokemon">
+  <div class="poke-image">
+    <img
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+      alt="Pokemon Image"
+    />
+  </div>
+  <div class="poke-id">N {{ pokemon.id }}</div>
+  <div class="poke-name">{{ pokemon.name }}</div>
+  <div class="poke-types">
+    <div
+      class="poke-type"
+      *ngFor="let type of pokemon.types"
+      [ngClass]="type.toLowerCase()"
+    >
+      {{ type }}
+    </div>
+  </div>
+</div>
