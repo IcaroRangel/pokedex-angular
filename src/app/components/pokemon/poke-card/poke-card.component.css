@@ -20,10 +20,13 @@
   padding: 12px 0px 12px 0px;
 }
 .poke-types {
-  height: 40px !important ;
-  display: inline;
+  display: flex;
 }
 .poke-type {
-  background: red;
-  width: 100px;
+  color: #f8f8ff;
+  text-transform: capitalize;
+  width: 200px;
+  text-align: center;
+  justify-content: space-evenly;
+  color: black;
 }
