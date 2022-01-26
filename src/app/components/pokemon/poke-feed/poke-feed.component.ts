@@ -9,7 +9,7 @@ import { PokemonService } from "../services/poke.service";
   styleUrls: ["./poke-feed.component.css"],
 })
 export class PokeFeedComponents {
-  public pokemons: Pokemon[] = [];
+  @Input() pokemons: Pokemon[] = [];
 
   constructor(public pokemonService: PokemonService) {}
 }

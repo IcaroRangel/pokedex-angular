@@ -1,6 +1,10 @@
 <div class="poke-card" *ngIf="pokemon">
   <div class="poke-image">
-    <img [src]="pokemon.image" alt="Pokemon Image" />
+    <img
+      [src]="pokemon.image"
+      alt="Pokemon Image"
+      [ngClass]="pokemon.types[0]"
+    />
   </div>
   <div class="poke-id">N° 00{{ pokemon.id }}</div>
   <div class="poke-name">{{ pokemon.name }}</div>
