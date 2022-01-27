@@ -12,6 +12,7 @@ import { MatListModule } from "@angular/material/list";
 import { MatTableModule } from "@angular/material/table";
 import { HttpClientModule } from "@angular/common/http";
 import { PokeCardComponent } from "./components/pokemon/poke-card/poke-card.component";
+import { PokemonComponent } from "./views/pokemon/pokemon.component";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PokeCardComponent } from "./components/pokemon/poke-card/poke-card.comp
     PokeFeedComponents,
     PokeInfosComponent,
     PokeCardComponent,
+    PokemonComponent,
   ],
   imports: [
     BrowserModule,
