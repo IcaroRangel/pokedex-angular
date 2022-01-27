@@ -9,7 +9,7 @@ import { PokemonService } from "../services/poke.service";
   styleUrls: ["poke-infos.component.css"],
 })
 export class PokeInfosComponent implements OnInit {
-  @Input() pokemons: Pokemon;
+  pokemons: Pokemon;
 
   constructor(
     private pokemonService: PokemonService,

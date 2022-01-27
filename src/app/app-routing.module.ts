@@ -5,11 +5,11 @@ import { PokeInfosComponent } from "./components/pokemon/poke-infos/poke-infos.c
 
 const routes: Routes = [
   {
-    path: "pokemons",
+    path: "",
     component: PokeFeedComponents,
   },
   {
-    path: "pokemons/:id",
+    path: "pokemon/:id",
     component: PokeInfosComponent,
   },
 ];
