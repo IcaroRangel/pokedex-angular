@@ -5,14 +5,14 @@ import Pokemon from "../models/poke.model";
 
 @Injectable({ providedIn: "root" })
 export class PokemonService {
+  baseUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
   @Input() pokemons: Pokemon[] = [];
 
   constructor(private http: HttpClient) {}
 
   read(): any {
-    const baseUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
     return this.http
-      .get<any>(baseUrl)
+      .get<any>(this.baseUrl)
       .pipe(
         map((value) => value.results),
         map((value) => {
@@ -33,8 +33,7 @@ export class PokemonService {
   }
 
   readInfos(id: number): Observable<Pokemon> {
-    const baseUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
-    const url = `${baseUrl}/${id}`;
+    const url = `${this.baseUrl}/${id}`;
 
     return this.http.get<Pokemon>(url);
   }

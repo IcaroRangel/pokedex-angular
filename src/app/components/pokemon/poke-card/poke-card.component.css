@@ -1,6 +1,8 @@
 .poke-card {
-  padding: 0px 30px 90px 0px;
+  margin: 0px 30px 90px 0px;
   width: 160px;
+  border: 1px solid #d3d3d3;
+  border-radius: 6px;
 }
 
 .poke-image > img {

@@ -10,6 +10,7 @@ import { PokemonService } from "../services/poke.service";
 })
 export class PokeInfosComponent implements OnInit {
   @Input() pokemons: Pokemon;
+
   constructor(
     private pokemonService: PokemonService,
     private route: ActivatedRoute
