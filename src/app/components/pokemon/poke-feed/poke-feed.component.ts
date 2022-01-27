@@ -8,8 +8,14 @@ import { PokemonService } from "../services/poke.service";
   templateUrl: "poke-feed.component.html",
   styleUrls: ["./poke-feed.component.css"],
 })
-export class PokeFeedComponents {
+export class PokeFeedComponents implements OnInit {
   @Input() pokemons: Pokemon[] = [];
 
   constructor(public pokemonService: PokemonService) {}
+
+  ngOnInit(): void {
+    this.pokemonService.read();
+  }
+
+  navigateToInfos() {}
 }
