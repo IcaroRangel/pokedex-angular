@@ -17,7 +17,7 @@ export class PokeInfosComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.id = this.route.snapshot.paramMap.get("id");
     if (this.id) {
       this.pokemonService.readById(Number(this.id)).subscribe((pokemon) => {

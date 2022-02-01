@@ -14,13 +14,13 @@ interface ResponsePokemon {
 
 @Injectable({ providedIn: "root" })
 export class PokemonService {
-  baseUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
-
   constructor(private http: HttpClient) {}
 
   async findAllPokemons() {
     const data = await firstValueFrom(
-      this.http.get<ResponsePokemon>(this.baseUrl)
+      this.http.get<ResponsePokemon>(
+        "https://pokeapi.co/api/v2/pokemon/?limit=151"
+      )
     );
 
     const linksPromises = data.results.map((pokemon) => {
@@ -42,8 +42,7 @@ export class PokemonService {
   }
 
   readById(id: number): Observable<Pokemon> {
-    const url = `${this.baseUrl}/${id}`;
-
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     return this.http.get<Pokemon>(url);
   }
 }

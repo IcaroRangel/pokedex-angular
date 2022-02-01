@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
 import Pokemon from "../models/poke.model";
 import { PokemonService } from "../services/poke.service";
 
