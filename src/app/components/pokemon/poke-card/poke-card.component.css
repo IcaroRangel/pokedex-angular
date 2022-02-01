@@ -4,6 +4,14 @@
   border: 1px solid #d3d3d3;
   border-radius: 6px;
 }
+@keyframes scaling {
+  to {
+    transform: scale(1.1);
+  }
+}
+.poke-card:hover {
+  animation: 0.8s scaling;
+}
 
 .poke-image > img {
   max-width: 100%;
@@ -22,7 +30,9 @@
   font-size: 18px;
   text-align: center;
   padding: 12px 0px 12px 0px;
+  color: #111111;
 }
+
 .poke-types {
   display: flex;
   gap: 8px;
