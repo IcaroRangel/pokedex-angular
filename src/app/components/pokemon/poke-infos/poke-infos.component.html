@@ -1,2 +1,30 @@
-<p>Id:{{ id }}</p>
-<p>teste: {{ pokemon.name }}</p>
+<div *ngIf="pokemon" class="poke-infos">
+  <div>
+    <h1>
+      {{ pokemon.name }}<span>N°{{ pokemon.id }}</span>
+    </h1>
+  </div>
+
+  <img
+    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
+      pokemon.id
+    }}.png"
+    alt="Pokemon Image"
+    [ngClass]="pokemon.types[0].type.name"
+  />
+  <div class="poke-stats">
+    <p class="info">Expêriencia base: {{ pokemon.base_experience }}</p>
+    <p class="info">Altura: {{ pokemon.height }} M</p>
+    <p class="info">Peso: {{ pokemon.weight }} KG</p>
+  </div>
+
+  <div class="poke-types">
+    <span
+      *ngFor="let typ of pokemon.types"
+      [ngClass]="typ.type.name"
+      class="poke-type"
+      >{{ typ.type.name }}</span
+    >
+  </div>
+  <div class="btn"><button (click)="back()">Voltar</button></div>
+</div>

@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, Input } from "@angular/core";
 import { firstValueFrom, from, map, mergeMap, Observable } from "rxjs";
+import PokeInfos from "../models/poke-infos.model";
 import Pokemon from "../models/poke.model";
 
 type PokemonMin = {
@@ -41,8 +42,8 @@ export class PokemonService {
     return pokemons;
   }
 
-  readById(id: number): Observable<Pokemon> {
+  readById(id: number): Observable<PokeInfos> {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    return this.http.get<Pokemon>(url);
+    return this.http.get<PokeInfos>(url);
   }
 }

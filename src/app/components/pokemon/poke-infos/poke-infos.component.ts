@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import Pokemon from "../models/poke.model";
+import PokeInfos from "../models/poke-infos.model";
 import { PokemonService } from "../services/poke.service";
 
 @Component({
@@ -9,20 +9,21 @@ import { PokemonService } from "../services/poke.service";
   styleUrls: ["poke-infos.component.css"],
 })
 export class PokeInfosComponent implements OnInit {
-  pokemon: Pokemon;
-  id: string | null;
+  public pokemon: PokeInfos;
 
   constructor(
     private pokemonService: PokemonService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
-  async ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get("id");
-    if (this.id) {
-      this.pokemonService.readById(Number(this.id)).subscribe((pokemon) => {
-        this.pokemon = pokemon;
-      });
-    }
+  ngOnInit() {
+    const id: any = this.route.snapshot.paramMap.get("id");
+    this.pokemonService.readById(id).subscribe((pokemon) => {
+      this.pokemon = pokemon;
+    });
+  }
+  back() {
+    this.router.navigate(["/"]);
   }
 }

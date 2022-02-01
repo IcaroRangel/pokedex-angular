@@ -8,3 +8,54 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+.grass {
+  background: #98fb98;
+}
+.fire {
+  background: #ff6347;
+}
+.water {
+  background: #40e0d0;
+}
+.bug {
+  background: #f8d5a3;
+}
+.steel {
+  background: #b0c4de;
+}
+.electric {
+  background: #ffd700;
+}
+.ice {
+  background: #87cefa;
+}
+.ground {
+  background: #cd853f;
+}
+.rock {
+  background: #8b4513;
+}
+.fairy {
+  background: #fceaff;
+}
+.poison {
+  background: #483d8b;
+}
+.dragon {
+  background: #97b3e6;
+}
+.psychic {
+  background: #ee82ee;
+}
+.fighting {
+  background: #ffa07a;
+}
+.normal {
+  background: #c0c0c0;
+}
+.ghost {
+  background: #363636;
+}
+.flying {
+  background: #87ceeb;
+}
