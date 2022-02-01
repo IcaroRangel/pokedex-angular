@@ -1,10 +1,10 @@
 <ul>
   <li routerLinkActive="active">
-    <a *ngFor="let pokemon of pokemonService.pokemons">
+    <a *ngFor="let pokemon of pokemons" routerLink="/pokemon/{{ pokemon.id }}">
       <app-poke-card [pokemon]="pokemon"></app-poke-card
     ></a>
   </li>
 </ul>
 
-<!-- routerLink="/pokemons/{{ pokemon.id }}" -->
-<!-- [routerLink]="['/pokemon/{{ pokemon.id }}']" -->
+<!-- routerLink="/pokemon/{{ pokemon.id }}" -->
+<!-- [routerLink]="['/pokemon/', pokemon.id]" -->

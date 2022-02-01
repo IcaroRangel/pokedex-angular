@@ -9,7 +9,8 @@ import { PokemonService } from "../services/poke.service";
   styleUrls: ["poke-infos.component.css"],
 })
 export class PokeInfosComponent implements OnInit {
-  pokemons: Pokemon;
+  pokemon: Pokemon;
+  id: string | null;
 
   constructor(
     private pokemonService: PokemonService,
@@ -17,9 +18,11 @@ export class PokeInfosComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const id: any = this.route.snapshot.paramMap.get("id");
-    this.pokemonService.readInfos(id).subscribe((pokemons) => {
-      this.pokemons = pokemons;
-    });
+    this.id = this.route.snapshot.paramMap.get("id");
+    if (this.id) {
+      this.pokemonService.readById(Number(this.id)).subscribe((pokemon) => {
+        this.pokemon = pokemon;
+      });
+    }
   }
 }

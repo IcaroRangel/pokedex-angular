@@ -9,14 +9,12 @@ import { PokemonService } from "../services/poke.service";
   styleUrls: ["./poke-feed.component.css"],
 })
 export class PokeFeedComponents implements OnInit {
-  @Input() pokemons: Pokemon[] = [];
+  pokemons: Pokemon[] = [];
 
   constructor(public pokemonService: PokemonService) {}
 
-  ngOnInit() {
-    this.pokemonService.read().subscribe((pokemons: any) => {
-      this.pokemons = pokemons;
-    });
+  async ngOnInit() {
+    this.pokemons = await this.pokemonService.findAllPokemons();
   }
 
   navigateToInfos() {}

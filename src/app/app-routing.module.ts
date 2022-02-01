@@ -9,6 +9,10 @@ const routes: Routes = [
     component: PokeFeedComponents,
   },
   {
+    path: "pokemons",
+    component: PokeFeedComponents,
+  },
+  {
     path: "pokemon/:id",
     component: PokeInfosComponent,
   },
